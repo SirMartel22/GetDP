@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import Getdp from './Components/Getdp'
 
 function App() {
 
   return (
     <>
-    
+     <Getdp />
     </>
   )
 }
