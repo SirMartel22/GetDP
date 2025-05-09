@@ -40,7 +40,7 @@ const Getdp = () => {
 
           {/* Download Button */}
           <div>
-              <button className="download">Download Your Chasers-DP</button>
+              <button className="download btn">Download Your Chasers-DP</button>
           </div>
 
 
