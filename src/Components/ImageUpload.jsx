@@ -24,7 +24,7 @@ const ImageUpload = () => {
     return (
         <div className="w-full max-w-md mx-auto mt-10">
 
-            <div {...getRootProps()} className="border-2 border-dashed border-gray-300 rounded-md p-6 text-center cursor-pointer bg-white hover:bg-gray-50" >
+            <div {...getRootProps()} className="border-2 border-gray-700 border-gray-300 rounded-md p-6 text-center cursor-pointer bg-transparent hover:bg-secondary" >
                 <input {...getInputProps()} />
 
                 {
