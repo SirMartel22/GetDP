@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from '/logo1.png'
 import flier from '../assets/bg.jpg'
+import ImageUpload from './ImageUpload'
+
 
 const Getdp = () => {
   return (
@@ -8,11 +10,11 @@ const Getdp = () => {
           
           {/* Navbar section */}
           <div className="nav">
-              <nav className="">
+              <nav className="h-40px w-full">
                   <ul className="link">
                       <li className="home">Home</li>
                       <li className="logo w-1/4">
-                          <img className="h-10 w-30" src={ logo } />
+                          <img className="h-[50px] w-[50px]" src={ logo } />
                       </li>
                       <li className="home">Register</li>
                   </ul>
@@ -29,16 +31,20 @@ const Getdp = () => {
               
               {/* Flier Section */}
               <div className="form-flier-container">
+                  
                     <div className="graphics w-1/2 py-24 px-24">
-                        <img className= "w-48 h-72" src={ flier } />
+                        <img className="w-24 h-48 lg-w-24 lg-h-48" src={ flier } />
                     </div>
 
                     {/* Form Input section */}
-                    <div className="form">
-                        <form action="" className="" methof="POST">
-                            
-                            <input name="name" type="text" />
-                            <input name="image" type="file/image"/>
+                    <div className="flexcard">
+                        <form action="" className="" method="POST">
+                          <label htmlFor="name">Name</label>
+                          <input name="name" type="text" />
+                          
+                          <label htmlFor="name">Upload Image</label>
+                          {/* <input name="image" type="file"/> */}
+                          <ImageUpload />
                         </form>
                     </div>
 
@@ -47,7 +53,7 @@ const Getdp = () => {
 
             {/* Download Button */}
 
-              <div>
+            <div>
                  <button className="download btn">Download Your Chasers-DP</button>
             </div>
 
