@@ -3,7 +3,7 @@ import logo from '/logo1.png'
 
 const Getdp = () => {
   return (
-      <div>
+      <div className="">
           
           {/* Navbar section */}
           <div className="nav">
