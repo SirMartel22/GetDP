@@ -1,17 +1,25 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useState, useEffect } from 'react'
 import { useDropzone } from 'react-dropzone'
 
 
-const ImageUpload = () => {
+const ImageUpload = ({ onImageUploaded }) => {
     const [image, setImage] = useState(null);
 
     const onDrop = useCallback(acceptedFiles => {
         const file = acceptedFiles[0];
-        setImage(Object.assign(file, {
-            preview: URL.createdObjectURL(file)
-        }));
-    }, []);
+        const imageWithPreview = Object.assign(file, {
+            preview:URL.createObjectURL(file)
+        });
+        setImage(imageWithPreview);
 
+           // pass the image up to the parent component
+            if (onImageUploaded) {
+                onImageUploaded(imageWithPreview)
+            }
+    }, [onImageUploaded]);
+
+
+ 
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
         onDrop,
         accept: {
@@ -19,6 +27,15 @@ const ImageUpload = () => {
         },
         multiple: false
     });
+
+    //clean up the object URLs when component unmounts
+    useEffect(() => {
+        return () => {
+            if (image && image.preview) {
+                URL.revokeObjectURL(image.preview);
+            };
+        };
+    }, [image]);
 
 
     return (
@@ -31,7 +48,7 @@ const ImageUpload = () => {
                     isDragActive ? (
                         <p>Drop Your DP Here...</p>
                     ) : image ? (
-                            <img src={image.preview} alt="preview" className = "mx-auto max-h-48 object-contain" />
+                            <img src={image.preview} alt="preview" className = "mx-auto max-h-48 object- rounded-mg" />
                         ) : (
                                 <>
                                     <div className="text-3xl mb-2 ">📤</div>
