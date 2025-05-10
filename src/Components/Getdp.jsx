@@ -85,7 +85,7 @@ const Getdp = () => {
                 //Add the user's name if provided
                 if (name.trim()) {
                     
-                    ctx.font = 'bold 28px Montserrat';
+                    ctx.font = 'bold 50px Montserrat';
                     ctx.fillStyle = '#ffffff';
                     ctx.textAlign = 'center';
                     ctx.fillText(name, canvas.width * 0.7, canvas.height * 0.8);
