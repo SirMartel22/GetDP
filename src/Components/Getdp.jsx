@@ -68,9 +68,7 @@ const Getdp = () => {
                     //Image is taller than wide
                     drawWidth = radius * 2;
                     drawHeight = drawWidth / aspectRatio;
-    
                 }
-    
     
                 ctx.drawImage(
                     userImg,
@@ -86,7 +84,7 @@ const Getdp = () => {
                 if (name.trim()) {
                     
                     ctx.font = 'bold 40px Montserrat';
-                    ctx.fillStyle = '#151515';
+                    ctx.fillStyle = '#1f1137';
                     ctx.textAlign = 'center';
                     ctx.fillText(name, canvas.width * 0.5, canvas.height * 0.77);
                 }
@@ -104,7 +102,7 @@ const Getdp = () => {
             // if no user image, just add name if provided
             if (name.trim()) {
                 ctx.font = 'bold 40px Montserrat';
-                ctx.fillStyle = '#ffffff';
+                ctx.fillStyle = '#1f1137';
                 ctx.textAlign = 'center';
                 ctx.fillText(name, canvas.width * 0.5, canvas.height * 0.77);
             }
@@ -150,6 +148,11 @@ const Getdp = () => {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link)
+       
+        // clear the input after download
+        setName(' ')
+        setUserImage(null)
+        setEditedFlierUrl(null)
     }
 
 
@@ -160,11 +163,11 @@ const Getdp = () => {
           <div className="mb-16 border-b border-neutral-700/80 pb-8">
               <nav className="w-full">
                   <ul className="flex flex-row items-center justify-center gap-6 md:gap-12 ">
-                      <li className="home cursor-pointer hover:text-yellow-600 transition">Home</li>
+                      <li className="home cursor-pointer hover:text-yellow-600 transition"><a href="https://tfpaw.org/">Home</a></li>
                       <li className="w-16 md:w-24 flex items-center justify-center">
                           <img className="h-12 w-12 md:h-16 md:h-16 object-contain " src={ logo } alt="Logo" />
                       </li>
-                      <li className="register cursor-pointer hover:text-yellow-600 transition">Register</li>
+                      <li className="register cursor-pointer hover:text-yellow-600 transition"><a href="https://tfpaw.org/chasers-conference/">Register</a></li>
                   </ul>
                   
               </nav>
@@ -201,6 +204,7 @@ const Getdp = () => {
                                     <label className="text-yellow-600 font-medium" htmlFor="name">Name</label>
                                     <input
                                         name="name"
+                                        id="name"
                                         placeholder="Kindly input your name"
                                         type="text"
                                         // value={name}
@@ -243,9 +247,9 @@ const Getdp = () => {
           <div className="footer flex flex-col text-center gap-8 justify-center items-center border-t border-neutral-700/80 py-24">
               <div className="flex gap-4 ">
                   
-                <Facebook color="white" strokeWidth={0.75} />
-                <Instagram color="white" strokeWidth={0.75} />
-                <Globe color="white" strokeWidth={0.75} />
+                <a className="" href="https://web.facebook.com/officialtfpaw"> <Facebook color="white" strokeWidth={0.75} /></a>
+                <a className="" href="https://www.instagram.com/officialtfpaw/"><Instagram color="white" strokeWidth={0.75} /></a>
+                <a className="" href="https://tfpaw.org/"><Globe color="white" strokeWidth={0.75} /></a>
               </div>
               
               <p>&copy; Chasers Conference 2025. All Rights Reserved </p>
