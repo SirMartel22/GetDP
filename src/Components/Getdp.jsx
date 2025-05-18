@@ -35,9 +35,9 @@ const Getdp = () => {
 
         //Define a circular area for user's photo in bottom right
         //Note: These Coordinate Should be adjusted based on your actual flier design
-        const userImgX = canvas.width * 0.7; // Position at 70% from left
-        const userImgY = canvas.height * 0.6; //Position at 60% from top
-        const radius = canvas.width * 0.12; // size of the circular fram
+        const userImgX = canvas.width * 0.5; // Position at 70% from left
+        const userImgY = canvas.height * 0.506; //Position at 60% from top
+        const radius = canvas.width * 0.24; // size of the circular fram
 
 
         //Only draw user image if available
@@ -85,10 +85,10 @@ const Getdp = () => {
                 //Add the user's name if provided
                 if (name.trim()) {
                     
-                    ctx.font = 'bold 50px Montserrat';
-                    ctx.fillStyle = '#ffffff';
+                    ctx.font = 'bold 40px Montserrat';
+                    ctx.fillStyle = '#151515';
                     ctx.textAlign = 'center';
-                    ctx.fillText(name, canvas.width * 0.7, canvas.height * 0.8);
+                    ctx.fillText(name, canvas.width * 0.5, canvas.height * 0.77);
                 }
 
                 //Generate data url for the composite image
@@ -103,10 +103,10 @@ const Getdp = () => {
         } else {
             // if no user image, just add name if provided
             if (name.trim()) {
-                ctx.font = 'bold 28px Montserrat';
+                ctx.font = 'bold 40px Montserrat';
                 ctx.fillStyle = '#ffffff';
                 ctx.textAlign = 'center';
-                ctx.fillText(name, canvas.width * 0.7, canvas.height * 0.8);
+                ctx.fillText(name, canvas.width * 0.5, canvas.height * 0.77);
             }
 
             
@@ -217,29 +217,6 @@ const Getdp = () => {
 
                         </div>
 
-                        {/* Preview Section */}
-
-                        {/* <div className="bg-[#2A1A3A] rounded-lg p-6 flex flex-col items justify-center">
-                            <h3 className="text-xl font-semibold text-yellow-600 mb-4">Preview</h3>
-                            {compositedImage ? (
-                                <img
-                                    src={compositedImage}
-                                    alt="Preview of your Chasers DP"
-                                    className="max-w-full max-h-96 rounded-lg shadow-lg"
-                                />
-                            ) : (
-                                    <div className="w-full 6-64 flex items-center justify-center bg-[#1F112D] rounded-lg">
-                                        <p className="text-gray-400">
-                                            {name && userImage
-                                                ? "Generating Preview..."
-                                                : "Enter your name and upload an image to see a preview"
-                                                
-                                            }
-
-                                        </p>
-                                    </div>
-                            ) }
-                        </div> */}
                   </div>
                     
 
