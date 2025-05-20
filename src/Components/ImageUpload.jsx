@@ -48,7 +48,7 @@ const ImageUpload = ({ onImageUploaded }) => {
                     isDragActive ? (
                         <p>Drop Your DP Here...</p>
                     ) : image ? (
-                            <img src={image.preview} alt="preview" className = "mx-auto max-h-48 object- rounded-mg" />
+                            <img src={image.preview} alt="preview" className = "mx-auto max-h-48 object-rounded-md" />
                         ) : (
                                 <>
                                     <div className="text-3xl mb-2 ">📤</div>
